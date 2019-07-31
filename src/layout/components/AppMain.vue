@@ -1,9 +1,8 @@
 <template>
   <div class="app-main" :class="{'is-collapse': isCollapsed}">
-    {{key}}
-      <transition name="fade-transform" mode="out-in">
-        <router-view :key="key" />
-      </transition>
+    <transition name="fade-transform" mode="out-in">
+      <router-view :key="key" />
+    </transition>
   </div>
 </template>
 

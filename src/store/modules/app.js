@@ -7,7 +7,8 @@ const state = {
     currentIndexPath: '1',
     openedIndexArr: []
   },
-  device: 'desktop'// desktop mobile
+  device: 'desktop',// desktop mobile
+  menuitems: []
 }
 
 const mutations = {
@@ -31,6 +32,9 @@ const mutations = {
   SET_PATH(state, path){
     state.currentIndexPath = path
   },
+  SET_MENUS(state, menuitems){
+    state.menuitems = menuitems
+  }
 }
 
 const actions = {
@@ -45,6 +49,11 @@ const actions = {
   },
   setPath(context, path){
     context.commit('SET_PATH', path)
+  },
+  getMenus(context, menuitems){
+    return new Promise((resolve,reject) => {
+      context.commit('SET_MENUS', menuitems)
+    })
   }
 }
 

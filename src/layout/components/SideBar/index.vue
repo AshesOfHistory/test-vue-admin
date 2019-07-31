@@ -15,6 +15,7 @@
         @close="handleClose"
         @select="handleSelect"
       >
+        <!--router-->
         <div class="logo-container" v-if="hasLogo" >
           <img src="@/assets/images/logo.jpg" alt="" class="logo">
           <span v-if="!isCollapse" class="title">{{title}}</span>
@@ -30,7 +31,7 @@
             <span>表单</span>
           </template>
           <el-menu-item-group>
-            <el-menu-item index="form-index">产能分析表</el-menu-item>
+            <el-menu-item index="form/index">产能分析表</el-menu-item>
             <el-menu-item index="employee">员工入职表</el-menu-item>
             <el-menu-item index="holiday">请假申请表</el-menu-item>
           </el-menu-item-group>

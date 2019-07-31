@@ -4,10 +4,19 @@ import Vue from 'vue'
 import App from './App'
 import router from './router'
 import axios from 'axios'
-// import './stylus/reset.css'
 import Element from 'element-ui'
 import 'element-ui/lib/theme-chalk/index.css';
+import '@/stylus/index.scss'
 import store from './store'
+
+// import './stylus/reset.css'
+// import './permission'
+
+// import i18n from './lang'
+// Vue.use(Element, {
+//   size: 'medium',
+//   i18n: (key, value) => i18n.t(key, value)
+// })
 
 Vue.use(Element);
 Vue.prototype.axios = axios;

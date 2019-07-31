@@ -7,7 +7,10 @@ const getUserInfo = (token,username,password) => axios.get(baseUrl+'/api/getUser
 
 const getMockInfo = () => axios.get(baseUrl+'/api/mock')
 
+const getMenus = () => axios.get(baseUrl+'/api/getMenus')
+
 export {
   getUserInfo,
-  getMockInfo
+  getMockInfo,
+  getMenus
 }
