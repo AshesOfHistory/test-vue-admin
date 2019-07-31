@@ -1,4 +1,4 @@
-# test-blog
+# test-vue
 
 > A Vue.js project
 
