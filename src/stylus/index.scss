@@ -1,4 +1,5 @@
-
+@import "./transition.scss";
+@import "./mixin.scss";
 
 *{
   margin:0;
@@ -6,4 +7,8 @@
 }
 i{
   font-style: normal;
+}
+
+ul,li{
+  list-style: none;
 }

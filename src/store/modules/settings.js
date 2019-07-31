@@ -1,16 +1,17 @@
 const defaultSettings = {
   title: '员工管理后台系统',
   fixedHeader: false,
-  sidebarLogo: false,
-  showSettings: true
+  sidebarLogo: true,
+  showSettings: true// 显示修改配置文件
 }
 
-const {fixedHeader, sidebarLogo, showSettings} = defaultSettings
+const {fixedHeader, sidebarLogo, showSettings, title} = defaultSettings
 
 const state = {
   showSettings: showSettings,
   fixedHeader: fixedHeader,
-  sidebarLogo: sidebarLogo
+  sidebarLogo: sidebarLogo,
+  title: title
 }
 
 const mutations = {

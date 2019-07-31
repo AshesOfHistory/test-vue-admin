@@ -1,6 +1,6 @@
 <template>
   <div class="index">
-    form
+    产能分析表
   </div>
 </template>
 

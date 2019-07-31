@@ -1,24 +1,37 @@
 #app {
 
-  .main-container {
-    min-height: 100%;
-    margin-left: $sideBarWidth;
-    position: relative;
-  }
-
   .sidebar-container {
     width: $sideBarWidth;
     background-color: $menuBg;
     height: 100%;
     position: fixed;
-    font-size: 0px;
     top: 0;
     bottom: 0;
     left: 0;
     z-index: 1001;
     overflow: hidden;
-    &.el-menu--collapse{
-      width: 65px!important;
+
+
+    // menu hover
+    .submenu-title-noDropdown,
+    .el-submenu__title {
+      &:hover {
+        background-color: $menuHover !important;
+      }
+    }
+
+    .is-active>.el-submenu__title {
+      color: $subMenuActiveText !important;
+    }
+
+    & .nest-menu .el-submenu>.el-submenu__title,
+    & .el-submenu .el-menu-item {
+      min-width: $sideBarWidth !important;
+      background-color: $subMenuBg !important;
+
+      &:hover {
+        background-color: $subMenuHover !important;
+      }
     }
   }
 

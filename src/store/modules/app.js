@@ -4,7 +4,8 @@ const state = {
   sidebar: {
     opened: Cookies.get('sidebarStatus') ? !!+Cookies.get('sidebarStatus') : true,// 默认是true
     withoutAnimation: false,
-    currentIndexPath: '1'
+    currentIndexPath: '1',
+    openedIndexArr: []
   },
   device: 'desktop'// desktop mobile
 }
@@ -26,7 +27,10 @@ const mutations = {
   },
   TOOGLE_DEVICE(state,device){// 感觉是set比较好
     state.device = device
-  }
+  },
+  SET_PATH(state, path){
+    state.currentIndexPath = path
+  },
 }
 
 const actions = {
@@ -38,6 +42,9 @@ const actions = {
   },
   toogleDevice(context, device){
     context.commit('TOOGLE_DEVICE', device)
+  },
+  setPath(context, path){
+    context.commit('SET_PATH', path)
   }
 }
 
