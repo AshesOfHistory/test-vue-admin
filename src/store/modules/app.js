@@ -3,7 +3,8 @@ import Cookies from 'js-cookie'
 const state = {
   sidebar: {
     opened: Cookies.get('sidebarStatus') ? !!+Cookies.get('sidebarStatus') : true,// 默认是true
-    withoutAnimation: false
+    withoutAnimation: false,
+    currentIndexPath: '1'
   },
   device: 'desktop'// desktop mobile
 }

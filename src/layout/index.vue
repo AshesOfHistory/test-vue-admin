@@ -2,7 +2,7 @@
   <div class="app-wrapper" :class="classObj">
     <div v-if="device == 'mobile' && sidebar.opened" class="drawer-bg" @click="handleClickOutside"></div>
 
-    <side-bar class="sidebar-container"></side-bar>
+    <side-bar class="sidebar-container" ></side-bar>
     <div class="main-container">
       <div :class="{'fixed-header': fixedHeader}">
         <nav-bar></nav-bar>
