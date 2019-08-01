@@ -5,6 +5,7 @@
 </template>
 
 <script>
+  import store from '@/store'
   export default {
     model: {},
     props: {},
@@ -15,12 +16,20 @@
       return {}
     },
     methods: {},
-    computed: {},
+    computed: {//利用computed的set和get来监听vuex的数据并自动操作
+      device: {
+        get(){
+          return store.getters.device
+        },
+        set(device){
+          store.dispatch('app/toogleDevice',device)
+        }
+      }
+    },
   }
 </script>
 
 <style lang="scss" scoped>
-  /*@import "assets/css/global";*/
   .SideBarItem {
   }
 </style>

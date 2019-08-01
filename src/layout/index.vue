@@ -1,9 +1,9 @@
 <template>
   <div class="app-wrapper" :class="classObj">
     <!--侧边栏-->
-    <side-bar ref="sidebarContainer" class="sidebar-container" :class="{'is-collapsed':!sidebar.opened}"></side-bar>
+    <side-bar class="sidebar-container" :class="{'is-collapsed':!sidebar.opened}"></side-bar>
     <!--主页面展示区-->
-    <div ref="mainContainer" class="main-container" :class="{'is-collapsed':!sidebar.opened}">
+    <div class="main-container" :class="{'is-collapsed':!sidebar.opened}">
       <div :class="{'fixed-header': fixedHeader}">
         <nav-bar></nav-bar>
       </div>
@@ -65,6 +65,7 @@
     }
 
     .main-container {
+      transtion: margin-left .28s;
       min-height: 100%;
       margin-left: $sideBarWidth;
       /*展开左边距*/

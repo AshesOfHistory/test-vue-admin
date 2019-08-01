@@ -1,10 +1,8 @@
 <template>
   <div class="app-main" :class="{'is-collapse': isCollapsed}">
-    <router-view :key="key" ></router-view>
-    <!--<transition name="fade-transform" mode="out-in">-->
-      <!--<router-view :key="key" ></router-view>-->
-      <!--&lt;!&ndash;name="app-main"&ndash;&gt;-->
-    <!--</transition>-->
+    <transition name="fade-transform" mode="out-in">
+      <router-view :key="key" ></router-view>
+    </transition>
   </div>
 </template>
 
@@ -35,6 +33,7 @@
   .app-main {
     /*50 = navbar  */
     min-height: calc(100vh - 50px);
+    padding:0 15px;
     width: 100%;
     position: relative;
     overflow: hidden;

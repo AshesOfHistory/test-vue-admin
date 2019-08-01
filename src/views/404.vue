@@ -10,7 +10,7 @@
       <div class="bullshit">
         <div class="bullshit__headline">{{ message }}</div>
         <div class="bullshit__info">请确保您的URL地址填写正确,或者点击下方按钮返回首页</div>
-        <a href="" class="bullshit__return-home">返回首页</a>
+        <a class="bullshit__return-home" @click.prevent="$router.push('/')">返回首页</a>
       </div>
     </div>
   </div>

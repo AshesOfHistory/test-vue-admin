@@ -109,9 +109,10 @@
                     if (res.status == 200 && res.data.data) {
                       menuitems = res.data.data.menuitems
                     }
-                    this.$store.dispatch('app/getMenus', menuitems).then((res) => {
-                      this.$router.addRoutes(menuitems)
-                    })
+                    // 远程获取到的随机姓名加到权限列表中
+                    // this.$store.dispatch('app/getMenus', menuitems).then((res) => {
+                    //   this.$router.addRoutes(menuitems)
+                    // })
                   })
                   this.loading = false
                   // todo: 消息提示登录成功

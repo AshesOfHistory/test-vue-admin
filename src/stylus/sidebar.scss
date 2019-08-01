@@ -1,6 +1,7 @@
 #app {
 
   .sidebar-container {
+    transition: width 0.28s;
     width: $sideBarWidth;
     background-color: $menuBg;
     height: 100%;

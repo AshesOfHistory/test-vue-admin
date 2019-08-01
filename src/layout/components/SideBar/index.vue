@@ -31,27 +31,27 @@
             <span>表单</span>
           </template>
           <el-menu-item-group>
-            <el-menu-item index="form-index">产能分析表</el-menu-item>
+            <el-menu-item index="form-index">表单列表</el-menu-item>
             <el-menu-item index="employee">员工入职表</el-menu-item>
             <el-menu-item index="holiday">请假申请表</el-menu-item>
           </el-menu-item-group>
         </el-submenu>
 
-        <el-submenu index="3">
-          <template slot="title">
-            <i class="el-icon-document"></i>
-            <span>表格</span>
-          </template>
-          <el-menu-item-group>
-            <template slot="title">分组1</template>
-            <el-menu-item index="3-1">选项1</el-menu-item>
-            <el-menu-item index="3-2">选项2</el-menu-item>
-          </el-menu-item-group>
-          <el-menu-item-group title="分组2">
-            <el-menu-item index="3-3">选项3</el-menu-item>
-            <el-menu-item index="3-4">选项4</el-menu-item>
-          </el-menu-item-group>
-        </el-submenu>
+        <!--<el-submenu index="3">-->
+          <!--<template slot="title">-->
+            <!--<i class="el-icon-document"></i>-->
+            <!--<span>表格</span>-->
+          <!--</template>-->
+          <!--<el-menu-item-group>-->
+            <!--<template slot="title">分组1</template>-->
+            <!--<el-menu-item index="3-1">选项1</el-menu-item>-->
+            <!--<el-menu-item index="3-2">选项2</el-menu-item>-->
+          <!--</el-menu-item-group>-->
+          <!--<el-menu-item-group title="分组2">-->
+            <!--<el-menu-item index="3-3">选项3</el-menu-item>-->
+            <!--<el-menu-item index="3-4">选项4</el-menu-item>-->
+          <!--</el-menu-item-group>-->
+        <!--</el-submenu>-->
 
         <el-menu-item index="4">
           <i class="el-icon-setting"></i>
@@ -85,25 +85,22 @@
       },
       handleSelect(index,indexPath){
         this.$store.dispatch('app/setPath', indexPath[indexPath.length-1])
-        let routerPath = '/'
-        this.$router.push(routerPath + index)
-        // console.log(index)
 
-        // let routerPath = '/'
-        // if(indexPath.length == 0) {
-        //   this.$router.push(routerPath)
-        // } else if (indexPath.length == 1 && indexPath[0] !== 'bashboard'){
-        //   routerPath += indexPath[0]
-        //   this.$router.push(routerPath)
-        // } else if (indexPath.length >= 2) {
-        //   if (indexPath[1].indexOf('index') >= 0) {
-        //     routerPath += indexPath[0]
-        //   } else {
-        //     routerPath += indexPath.join('/')
-        //   }
-        //   console.log(routerPath)
-        //   this.$router.push(routerPath)
-        // }
+        let routerPath = '/'
+        if(indexPath.length == 0) {
+          this.$router.push(routerPath)
+        } else if (indexPath.length == 1 && indexPath[0] !== 'bashboard'){
+          routerPath += indexPath[0]
+          this.$router.push(routerPath)
+        } else if (indexPath.length >= 2) {
+          if (indexPath[1].indexOf('index') >= 0) {
+            routerPath += indexPath[0]
+          } else {
+            routerPath += indexPath.join('/')
+          }
+          console.log(routerPath)
+          this.$router.push(routerPath)
+        }
       },
     },
     computed: {

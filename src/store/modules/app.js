@@ -34,7 +34,7 @@ const mutations = {
   },
   SET_MENUS(state, menuitems){
     state.menuitems = menuitems
-  }
+  },
 }
 
 const actions = {
@@ -50,11 +50,11 @@ const actions = {
   setPath(context, path){
     context.commit('SET_PATH', path)
   },
-  getMenus(context, menuitems){
+  getPermissionList(context, permissionList){
     return new Promise((resolve,reject) => {
-      context.commit('SET_MENUS', menuitems)
+      context.commit('SET_MENUS', permissionList)
     })
-  }
+  },
 }
 
 export default {

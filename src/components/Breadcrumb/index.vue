@@ -2,7 +2,9 @@
   <el-breadcrumb class="app-breadcrumb" separator="/">
     <transition-group name="breadcrumb">
       <el-breadcrumb-item v-for="(item,index) in levelList" :key="item.path">
-        <a @click.prevent="handleLink(item)">{{item.meta.title}}</a>
+        <!--处于当前页则不必跳转-->
+        <span v-if="index == levelList.length-1">{{item.meta.title}}</span>
+        <a v-else @click.prevent="handleLink(item)">{{item.meta.title}}</a>
       </el-breadcrumb-item>
     </transition-group>
   </el-breadcrumb>
@@ -10,32 +12,30 @@
 
 <script>
   import pathToRegexp from 'path-to-regexp'
+
   export default {
     model: {},
     props: {},
     components: {},
-    created() {
-      this.getBreadcrumb()
-    },
     data() {
       return {
         levelList: null,
       }
     },
-    watch:{
-      $route(){
+    watch: {
+      $route() {
         this.getBreadcrumb()
       }
     },
+    created() {
+      this.getBreadcrumb()
+    },
     methods: {
       getBreadcrumb(){
-        console.log(this.$route)
-        console.log(this.$route.matched)
         let matched = this.$route.matched.filter(item => item.meta && item.meta.title && item.path)// 对象属性非空校验
-        // const first = matched[0]
-        // if (!this.isDashboard(first)){// 若非首页则在首页后面添加匹配的路由
-        //   matched = [{path: '/dashboard',meta:{title: 'Dashboard'}}].concat(matched)
-        // }
+        if (!this.isDashboard(matched[0])){// 若非首页则在首页后面添加匹配的路由
+          matched = [{path: '/dashboard',meta:{title: '首页'}}].concat(matched)
+        }
         this.levelList = matched
         console.log(this.levelList)
       },
@@ -44,7 +44,7 @@
         if (!name) {
           return false
         }
-        return name.trim().toLocaleLowerCase() === 'Dashboard'.toLocaleLowerCase()
+        return name.trim().toLocaleLowerCase() === 'dashboard'
       },
       handleLink(item){
         const {redirect, path} = item
@@ -52,6 +52,9 @@
           this.$router.push(redirect)
           return
         }
+        // 手动点击跳转menu
+        console.log(path)
+        console.log(this.$refs.app_menu)
         this.$router.push(path)
       },
     },

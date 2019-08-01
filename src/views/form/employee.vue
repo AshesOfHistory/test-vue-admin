@@ -10,7 +10,6 @@
     props: {},
     components: {},
     created() {
-      alert('员工入职表')
     },
     mounted() {
     },
