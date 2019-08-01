@@ -31,7 +31,7 @@
             <span>表单</span>
           </template>
           <el-menu-item-group>
-            <el-menu-item index="form/index">产能分析表</el-menu-item>
+            <el-menu-item index="form-index">产能分析表</el-menu-item>
             <el-menu-item index="employee">员工入职表</el-menu-item>
             <el-menu-item index="holiday">请假申请表</el-menu-item>
           </el-menu-item-group>
@@ -85,7 +85,9 @@
       },
       handleSelect(index,indexPath){
         this.$store.dispatch('app/setPath', indexPath[indexPath.length-1])
-        this.$router.push('/form')
+        let routerPath = '/'
+        this.$router.push(routerPath + index)
+        // console.log(index)
 
         // let routerPath = '/'
         // if(indexPath.length == 0) {

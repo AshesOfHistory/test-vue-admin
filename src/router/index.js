@@ -23,26 +23,26 @@ export const constantRouterMap = [
     path: '/',
     component: Layout,
     redirect:'/dashboard',
-    name: 'dashboard',
     children: [
       {
         path: 'dashboard',
+        name: 'Dashboard',
         component: () => import('@/views/dashboard'),
         meta: {title: 'Dashboard', icon: 'dashboard'}
-      }
+      },
     ]
   },
   {
     path: '/form',
     component: Layout,
-    name: 'form',
-    redirect:'/form/index',
+    redirect: '/form-index',
     meta: {title:'表单', icon: 'form'},
     children: [
       {
-        path: 'index',
+        path: 'form-index',
+        name: 'Form-index',
         component: () => {import('@/views/form')},
-        meta: {title: '产能分析表', icon: 'form'}
+        meta: {title: '表单列表', icon: 'form'}
       },
       {
         path: 'employee',
@@ -58,11 +58,11 @@ export const constantRouterMap = [
       }
     ]
   },
-  {// 其他任何不存在的路由地址全都重定向到404
-    path: '*',
-    redirect: '/404',
-    hidden: true
-  }
+  // {// 其他任何不存在的路由地址全都重定向到404
+  //   path: '*',
+  //   redirect: '/404',
+  //   hidden: true
+  // }
 ] // 定义静态路由
 
 export const asyncRouterMap = [
