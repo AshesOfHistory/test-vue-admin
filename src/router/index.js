@@ -77,7 +77,7 @@ export const asyncRouterMap = [
     path: '*',
     redirect: '/404',
     hidden: true
-  }// 不规范路由重定向到404页面转到动态路由配置中
+  }// 不规范路由重定向到404页面转到动态路由配置中  ceshi
 ]// 定义动态路由
 
 const createRouter = () => new Router({
