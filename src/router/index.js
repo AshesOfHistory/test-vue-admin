@@ -57,11 +57,7 @@ export const constantRouterMap = [
       }
     ]
   },
-  {// 其他任何不存在的路由地址全都重定向到404
-    path: '*',
-    redirect: '/404',
-    hidden: true
-  }
+
 ] // 定义静态路由
 
 export const asyncRouterMap = [
@@ -76,7 +72,12 @@ export const asyncRouterMap = [
         component: (resolve) => require(['@/views/permission'], resolve)
       }
     ]
-  }
+  },
+  {// 其他任何不存在的路由地址全都重定向到404
+    path: '*',
+    redirect: '/404',
+    hidden: true
+  }// 不规范路由重定向到404页面转到动态路由配置中
 ]// 定义动态路由
 
 const createRouter = () => new Router({

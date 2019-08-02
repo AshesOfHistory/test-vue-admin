@@ -52,9 +52,7 @@
           this.$router.push(redirect)
           return
         }
-        // 手动点击跳转menu
-        console.log(path)
-        console.log(this.$refs.app_menu)
+        // todo 手动点击跳转menu
         this.$router.push(path)
       },
     },
