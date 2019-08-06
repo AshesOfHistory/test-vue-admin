@@ -9,6 +9,8 @@ import 'element-ui/lib/theme-chalk/index.css';
 import '@/stylus/index.scss'
 import store from './store'
 
+import '@/icons'
+
 // import './stylus/reset.css'
 // import './permission'
 

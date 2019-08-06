@@ -69,6 +69,7 @@ export const asyncRouterMap = [
       {
         path: '',
         name: 'quanxianceshi',
+        meta: {title: '权限控制', icon: 'permission'},
         component: (resolve) => require(['@/views/permission'], resolve)
       }
     ]
@@ -77,7 +78,7 @@ export const asyncRouterMap = [
     path: '*',
     redirect: '/404',
     hidden: true
-  }// 不规范路由重定向到404页面转到动态路由配置中  ceshi
+  }// 不规范路由重定向到404页面转到动态路由配置中
 ]// 定义动态路由
 
 const createRouter = () => new Router({
