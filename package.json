@@ -18,7 +18,8 @@
     "element-ui": "^2.11.0",
     "nprogress": "^0.2.0",
     "normalize.css": "^8.0.1",
-    "path-to-regexp": "^3.0.0"
+    "path-to-regexp": "^3.0.0",
+    "driver.js": "^0.9.7"
   },
   "devDependencies": {
     "autoprefixer": "^7.1.2",
