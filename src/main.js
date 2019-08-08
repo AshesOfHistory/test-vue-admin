@@ -20,6 +20,13 @@ import '@/icons'
 //   i18n: (key, value) => i18n.t(key, value)
 // })
 
+// import VueI18n from 'vue-i18n'// vue-i18n 6.x
+// import zhLocale from 'element-ui/lib/locale/lang/zh-CN'
+// import enLocale from 'element-ui/lib/locale/lang/en'
+// Vue.use(VueI18n)
+// Vue.locale('zh-cn',zhLocale)
+// Vue.locale('en',enLocale)
+
 Vue.use(Element);
 Vue.prototype.axios = axios;
 

@@ -6,6 +6,9 @@
     <div id="test2" @click="handleClipboard($event,'引导测试2剪贴板')">引导测试2</div>
 
     <el-button @click.prevent.stop="guide">开始引导</el-button>
+
+    <!--api-key="6zax7tzh6cj0m68t9vmzr1tebo4uey8lu290tvv19q2h4c7y"-->
+    <tinymce></tinymce>
   </div>
 </template>
 
@@ -13,7 +16,13 @@
   import Driver from 'driver.js' // import driver.js
   import 'driver.js/dist/driver.min.css'
   import clipboard from '@/utils/clipboard'
+
+  import Tinymce from '@/components/Tinymce'
+
   export default {
+    components: {
+      Tinymce
+    },
     mounted() {
       this.driver = new Driver({
         animate: true,
@@ -24,6 +33,8 @@
         doneBtnText: '完成',
         closeBtnText: '关闭'
       })
+
+
 
     },
     data() {
@@ -45,7 +56,8 @@
               description: '测试说明2'
             }
           },
-        ]
+        ],
+
       }
     },
     methods: {
