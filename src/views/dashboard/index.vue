@@ -1,6 +1,7 @@
 <template>
   <div class="index">
     this is dashboard page
+    develop
   </div>
 </template>
 
